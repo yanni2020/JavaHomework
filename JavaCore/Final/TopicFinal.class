@@ -1,0 +1,54 @@
+package Final;
+
+/**
+ * Topic: Final
+ */
+public class TopicFinal {
+    
+    public static final int VAR = 10;
+
+    public static String func() {
+        return "aaa";
+    }
+
+    /**
+     * Final class cannot be inheritant
+     */
+    public static final class Fclass{
+
+    }
+    public static class ChildClass extends Fclass{
+
+    }
+
+    /**
+     * final method cannot be override
+     */
+    public class Pclass{
+        public String func1() {
+            return "aaa";
+        }
+        public final String Ffunc() {
+            return "aaa";
+        }
+    }
+    public class Cclass extends Pclass{
+        @Override
+        public String func1() {
+            return "bbb";
+        }
+        @Override
+        public final String Ffunc() {
+            return "aaa";
+        }
+    }
+
+    /**
+     * The value of final variable cannot be modified
+     */
+    public static void main(String[] args) {
+      VAR = 1;
+    }
+
+}
+
